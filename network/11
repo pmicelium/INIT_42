@@ -1,0 +1,4 @@
+name : nat-1
+ip : 10.60.1.11
+
+ # the device that make the link between me and the outside world is a NAT server
