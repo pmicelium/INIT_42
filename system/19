@@ -1,0 +1,2 @@
+they're call 'daemon'
+anacron console-setup.sh dbus keyboard-setup.sh networking rsyslog udev bluetooh cron hwclock.sh kmod procps ssh
