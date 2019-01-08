@@ -1,1 +1,1 @@
-ipconfig getpacket en0 | grep yiaddr
+ipconfig getpacket en0 | grep yiaddr | cut -c 10-18

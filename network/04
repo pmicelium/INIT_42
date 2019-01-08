@@ -1,1 +1,1 @@
-netstat -r | grep "default"
+route -n get default | grep 'gateway' | cut -c 14-26
