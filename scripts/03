@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Ce script vas vous informer de maniere delicate si vous n'avez pas entrer de commande depuis 5 min
+
+var1=$(stat ~/.zshrc_history | cut -c 90-98)
+while [ 1 ]
+do
+	sleep 300
+	var2=$(stat ~/.zshrc_history | cut -c 90-98)
+	if [ "$var1" = "$var2" ]; then
+	echo "Nothing done within 5 mintes !!! GET TO WORK !!!"
+	fi
+done
