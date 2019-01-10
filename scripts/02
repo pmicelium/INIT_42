@@ -1,15 +1,22 @@
 #!/bin/bash
 
+# This script wild delete a user even if he is connected
 echo "Enter the name of the user you want to delete: "
 read user_d
-sudo passwd -l $user
-echo "The user <$user_d> is now bloked"
-sudo pgrep -u $user
-if [$? = 0]; then
-	echo "No program was launched by <$user_d>"
+grep "$user" /etc/passwd > /dev/null #check if the user exist
+if [ $? == 0 ]; then
+	echo "user found in /etc/passwd"
+	sudo passwd -l $user #block the user from reconnected again
+	echo "The user <$user_d> is now bloked"
+	sudo pgrep -u $user #check if the user has launched any programs
+	if [$? = 0]; then
+		echo "No program was launched by <$user_d>"
+	else
+		sudo killall -KILL -u $user #kill the programs launched by the user
+		echo "All the programs launched by <$user_d> were killed"
+	fi
+	sudo userdel -r $user #delete the user
+	echo "The user has been sucessfully delete"
 else
-	sudo killall -KILL -u $user
-	echo "All the programs launched by <$user_d> were killed"
+	echo "user not exist"
 fi
-sudo userdel -r $user
-echo "The user has been sucessfully delete"
