@@ -1,2 +1,2 @@
 a) ifconfig en0 | grep broadcast | cut -c 46-58
-b) ping broadcasthost
+b) arp -a
