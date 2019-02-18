@@ -1,1 +1,1 @@
-echo "new name" > /ect/hostname
+hostnamectl set-hostname new-name

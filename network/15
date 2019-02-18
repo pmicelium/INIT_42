@@ -1,1 +1,2 @@
-vim /etc/hosts then i'll add the chance i need as a new host so new ip and domain name
+vim /etc/hosts then add :
+49.19.122.85 intra.42.fr

@@ -1,2 +1,3 @@
 they're call 'daemon'
-anacron console-setup.sh dbus keyboard-setup.sh networking rsyslog udev bluetooh cron hwclock.sh kmod procps ssh
+command : ls /etc/init.d
+result : anacron console-setup.sh dbus keyboard-setup.sh networking rsyslog udev bluetooh cron hwclock.sh kmod procps ssh

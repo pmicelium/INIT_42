@@ -1,1 +1,1 @@
-cat /etc/passwd
+cat /etc/passwd | grep "home" | cut -d: -f1
